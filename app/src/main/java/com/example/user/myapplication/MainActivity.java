@@ -15,16 +15,16 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ListView lv;
-    ArrayList<Picture> albumlist;
+    ArrayList<Pteam> albumlist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         lv = (ListView)findViewById(R.id.lv);
-        albumlist = new ArrayList<Picture>();
-        Picture picture1 = new Picture("公鹿隊",R.drawable.bucks, 93,"暴龍隊", R.drawable.raptors, 118);
-        Picture picture2 = new Picture("勇士隊", R.drawable.warriors, 128,"拓荒者隊", R.drawable.trailblazers, 103);
+        albumlist = new ArrayList<Pteam>();
+        Pteam picture1 = new Pteam("公鹿隊",R.drawable.bucks, 93,"暴龍隊", R.drawable.raptors, 118);
+        Pteam picture2 = new Pteam("勇士隊", R.drawable.warriors, 128,"拓荒者隊", R.drawable.trailblazers, 103);
         albumlist.add(picture1);
         albumlist.add(picture2);
 

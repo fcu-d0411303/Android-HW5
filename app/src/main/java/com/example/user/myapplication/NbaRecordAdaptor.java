@@ -20,9 +20,9 @@ import java.util.List;
 
 public class NbaRecordAdaptor extends BaseAdapter{
 
-    ArrayList<Picture> arrayList;
+    ArrayList<Pteam> arrayList;
     Context context;
-    public NbaRecordAdaptor(Context context, ArrayList<Picture> items) {
+    public NbaRecordAdaptor(Context context, ArrayList<Pteam> items) {
         arrayList = items;
         this.context = context;
     }
@@ -45,21 +45,21 @@ public class NbaRecordAdaptor extends BaseAdapter{
     @Override
     public View getView(int position, View itemlayout, ViewGroup parent) {
         itemlayout=LayoutInflater.from(context).inflate(R.layout.listitem,parent,false);
-        Picture item = (Picture)getItem(position);
+        Pteam item = arrayList.get(position);
 
         ImageView iv1 = (ImageView)itemlayout.findViewById(R.id.iv1);
         iv1.setImageResource(item.imgid1);
         TextView name1 = (TextView)itemlayout.findViewById(R.id.tv1);
         name1.setText(item.name1);
         TextView num1 = (TextView)itemlayout.findViewById(R.id.tv2);
-        num1.setText(item.num1);
+        num1.setText(String.valueOf(item.num1));//元bug
 
         ImageView iv2 = (ImageView)itemlayout.findViewById(R.id.iv2);
         iv2.setImageResource(item.imgid2);
         TextView name2 = (TextView)itemlayout.findViewById(R.id.tv3);
         name2.setText(item.name2);
         TextView num2 = (TextView)itemlayout.findViewById(R.id.tv4);
-        num2.setText(item.num2);
+        num2.setText(String.valueOf(item.num2));//元bug
 
         if (item.num1>item.num2){
             num1.setTextColor(Color.parseColor("#ffcc0000"));
